@@ -7,7 +7,7 @@ https://github.com/korosuke613/texlive-ja-devcontainer-template
 OS等の環境を問わず、いつでも同じLaTeX執筆環境を構築できます。
 
 # 使用準備
-1. PCにDockerとVSCode(+拡張機能のremote containerとLaTeX Workshop)を入れる(OSは問わない)
+1. PCにDockerとVSCode(+拡張機能のremote container)を入れる(OSは問わない)
 2. このリポジトリを`git clone` 
 3. クローンしたフォルダをVSCodeで開く
 4. 左下の「><」のようなアイコンをクリックし、`Remote-Containers: Reopen in Container`を選択
@@ -17,3 +17,9 @@ OS等の環境を問わず、いつでも同じLaTeX執筆環境を構築でき�
 このリポジトリは環境構築用リポジトリです。そのため、論文をGit管理した場合は3と4の間で以下の手順を入れてください。
 - `rm -rf .git/`し、環境構築用リポジトリでは無くする
 - 論文執筆用のリポジトリとして`git init`する
+
+# 仕組み
+- 準備の4をすると、このリポジトリの中のDockerfile等に従ってコンテナが作成される。
+- そのコンテナにはLaTeXコンパイラが入っているのでコンパイル可能
+- そのコンテナのworkdirにこのリポジトリがマウントされるので、作ったlatexファイルがコンテナ内にあるのと同じになる
+- docker-compose.yamlでリモートのVSCodeにLaTeX Workshopが入れられるので、リモートのVSCodeで「▶」からコンパイルできる
