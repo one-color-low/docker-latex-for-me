@@ -23,3 +23,7 @@ OS等の環境を問わず、いつでも同じLaTeX執筆環境を構築でき�
 - そのコンテナにはLaTeXコンパイラが入っているのでコンパイル可能
 - そのコンテナのworkdirにこのリポジトリがマウントされるので、作ったlatexファイルがコンテナ内にあるのと同じになる
 - docker-compose.yamlでリモートのVSCodeにLaTeX Workshopが入れられるので、リモートのVSCodeで「▶」からコンパイルできる
+
+# 用改善点
+- LaTeX Workshopがなぜかdocker-compose時にインストールされない
+- git管理はローカルのターミナルでやらないといけないのが不便
